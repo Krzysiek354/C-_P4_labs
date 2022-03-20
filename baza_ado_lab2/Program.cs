@@ -32,10 +32,12 @@ using (SqlConnection connection = new SqlConnection(connectionString))
         reader.Close();
     }
 
-    using (SqlCommand komenda = new SqlCommand("INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthEastern')", connection))
+    using (SqlCommand komenda = connection.CreateCommand())//new SqlCommand("INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthEastern')", connection))
     {
+        komenda.CommandType = System.Data.CommandType.Text;
+        komenda.CommandText = "INSERT Region(RegionID, RegionDescription) VALUES(8, 'Polnoc')";
         komenda.ExecuteNonQuery();
-        
+
     }
     connection.Close();
 }
