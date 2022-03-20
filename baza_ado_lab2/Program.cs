@@ -34,8 +34,8 @@ using (SqlConnection connection = new SqlConnection(connectionString))
 
     using (SqlCommand komenda = new SqlCommand("INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthEastern')", connection))
     {
-        SqlDataReader reader = komenda.ExecuteReader();
-        reader.Close();
+        komenda.ExecuteNonQuery();
+        
     }
     connection.Close();
 }
