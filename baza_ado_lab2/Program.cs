@@ -31,11 +31,26 @@ using (SqlConnection connection = new SqlConnection(connectionString))
         }
         reader.Close();
     }
+    string sqll = "INSERT Into Region"+"(RegionID, RegionDescription) VALUES"+"(@liczba,@kierunek)";
+    using (SqlCommand komenda = new SqlCommand(sqll,connection))
+    { 
+        SqlParameter parameter = new SqlParameter()
+        {
+            ParameterName = "@liczba",
+            Value = 10,
+            SqlDbType = System.Data.SqlDbType.Int
+            
+        };
+        komenda.Parameters.Add(parameter);
+        parameter = new SqlParameter()
+        {
+            ParameterName = "@kierunek",
+            Value = "polnocyzachod",
+            SqlDbType = System.Data.SqlDbType.NVarChar,
+            Size = 20
 
-    using (SqlCommand komenda = connection.CreateCommand())//new SqlCommand("INSERT Region (RegionID, RegionDescription) VALUES (5, 'NorthEastern')", connection))
-    {
-        komenda.CommandType = System.Data.CommandType.Text;
-        komenda.CommandText = "INSERT Region(RegionID, RegionDescription) VALUES(8, 'Polnoc')";
+        };
+        komenda.Parameters.Add(parameter);
         komenda.ExecuteNonQuery();
 
     }
