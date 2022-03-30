@@ -37,7 +37,7 @@ using (SqlConnection connection = new SqlConnection(connectionString))
         SqlParameter parameter = new SqlParameter()
         {
             ParameterName = "@liczba",
-            Value = 10,
+            Value = 11,
             SqlDbType = System.Data.SqlDbType.Int
             
         };
