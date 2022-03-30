@@ -57,7 +57,9 @@ var result = connection.Query<Region>("SELECT * FROM dbo.[Region]"); //queryfirs
 //}
 
 
-var joinResult_1 = connection.Query<Territories, Region, Territories>("SELECT * FROM @territor as t inner join @reggioo as r on t.RegionID = r.RegionID WHERE t.TerritoryDescription like 'E%'",
+
+
+var joinResult_1 = connection.Query<Territories, Region, Territories>("SELECT * FROM Territories as t inner join Region as r on t.RegionID = r.RegionID WHERE t.TerritoryDescription like 'E%'",
     (tterytor, reg) =>
     {
         tterytor.Region = reg;
