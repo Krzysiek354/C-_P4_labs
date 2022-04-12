@@ -5,7 +5,9 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "baza_ado_lab2", "baza_ado_lab2\baza_ado_lab2.csproj", "{26DBB374-0BB6-4774-9D56-A81F4645CEA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zajecia_3_p4_dapper", "Zajecia_3_p4_dapper\Zajecia_3_p4_dapper.csproj", "{92662AA0-9A2D-4A27-B1D8-F83E80215E0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zajecia_3_p4_dapper", "Zajecia_3_p4_dapper\Zajecia_3_p4_dapper.csproj", "{92662AA0-9A2D-4A27-B1D8-F83E80215E0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "zajecia_4_", "zajecia_4_\zajecia_4_.csproj", "{899FFCC8-CEFC-484F-9F68-9AE88B7F039A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{92662AA0-9A2D-4A27-B1D8-F83E80215E0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92662AA0-9A2D-4A27-B1D8-F83E80215E0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92662AA0-9A2D-4A27-B1D8-F83E80215E0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899FFCC8-CEFC-484F-9F68-9AE88B7F039A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899FFCC8-CEFC-484F-9F68-9AE88B7F039A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899FFCC8-CEFC-484F-9F68-9AE88B7F039A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899FFCC8-CEFC-484F-9F68-9AE88B7F039A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

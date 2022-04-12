@@ -16,18 +16,18 @@ SqlConnection connection = new SqlConnection(connectionString);
 //        }
 //    );//przez parametr typ anonimowy ALBO ponizej
 
-var regionToInsert = new Region() // obiekt do parametru
-{
-    RegionId = 15,
-    RegionDescription = "testregionn"
-};
+//var regionToInsert = new Region() // obiekt do parametru
+//{
+//    RegionId = 15,
+//    RegionDescription = "testregionn"
+//};
 
 //var insertResult = connection.Execute("INSERT INTO Region(RegionID,RegionDescription) Values (@RegionId,@RegionDescription)", 
 // regionToInsert
 //    );//przez parametr, nazwy jak w obiekcie regionToInsert
 
 
-var result = connection.Query<Region>("SELECT * FROM dbo.[Region]"); //queryfirst jednego goscia pobiera, querysingle pobira jeden wiersz
+//var result = connection.Query<Region>("SELECT * FROM dbo.[Region]"); //queryfirst jednego goscia pobiera, querysingle pobira jeden wiersz
 
 
 
@@ -56,16 +56,26 @@ var result = connection.Query<Region>("SELECT * FROM dbo.[Region]"); //queryfirs
 //    Console.WriteLine($"{item.ProductName} : {item.Category.CategoryName}");
 //}
 
+//var param = new SqlParameter()
+//{
+
+//            ParameterName = "@liczba",
+//            Value = 11,
+//            SqlDbType = System.Data.SqlDbType.Int
 
 
+//}
 
-var joinResult_1 = connection.Query<Territories, Region, Territories>("SELECT * FROM Territories as t inner join Region as r on t.RegionID = r.RegionID WHERE t.TerritoryDescription like 'E%'",
+var param = new { Param = "E%" };
+
+var joinResult_1 = connection.Query<Territories, Region, Territories>("SELECT * FROM Territories as t inner join Region as r on t.RegionID = r.RegionID WHERE t.TerritoryDescription like @Param",
     (tterytor, reg) =>
     {
         tterytor.Region = reg;
         return tterytor;
     },
-    splitOn: "RegionID"
+    param,
+    splitOn:"RegionID"
     );
 
 foreach (var item in joinResult_1)
