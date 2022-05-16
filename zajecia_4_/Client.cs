@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace zajecia_4_
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int IDClient {get;set;}
         public string Name { get; set; }
-
+        
         public decimal Balance { get; set; }
 
         public string Adress { get; set; }
