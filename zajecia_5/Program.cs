@@ -8,7 +8,7 @@ var context = new MyDbContext();
 context.Database.EnsureCreated();
 var myclient = new Client()
 {
-    Name = "Jan Nowak"
+    Name = "Jann Nowak"
 };
 
 myclient.Orders.Add(new order()
