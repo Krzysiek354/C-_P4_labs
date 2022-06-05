@@ -89,7 +89,7 @@ while (true)
 
 
             ksiazka = Console.ReadLine();
-            var b00k = context.Books.Include(x => x.Autor).ToArray();
+            var b00k = context.Books.Include(x => x.Autor);
 
 
 
